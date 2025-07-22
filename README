@@ -1,0 +1,28 @@
+Codeschnipsel aus diesem Video https://youtu.be/5OmSyJgb-y4
+
+
+
+
+
+
+
+
+
+
+```
+services:
+  token-api:
+    image: ghcr.io/tom-bom-badil/ugreen-api-token:latest
+    container_name: ugreen-api-token
+    ports:
+      - "4115:4115"
+    environment:
+      UGREEN_NAS_API_SCHEME: "https"
+      UGREEN_NAS_API_PORT: "9443"
+      UGREEN_NAS_API_VERIFY_SSL: "false"
+      USERNAME: "Masteradmin   "
+      PASSWORD: "cynkoc-8kadfu-Mifkis"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+```
